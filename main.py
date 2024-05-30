@@ -1,5 +1,7 @@
+# imports
 import math
 
+# custom classes
 class Circle:
     def __init__(self, radius: float):
         self.radius = radius
@@ -20,11 +22,11 @@ class Circle:
         return self.radius
 
 
-# main script
-
+# main script start
+# prompt user for radius, repeat if not valid
 valid_radius = False
 user_radius = 0
-while valid_radius == False:
+while not valid_radius:
     user_radius = input(f"Please specify a radius: ")
     try:
         user_radius = float(user_radius)
@@ -34,7 +36,7 @@ while valid_radius == False:
 
 # Calculate circle & report results, then ask to grow or exit
 repeat = True
-while repeat == True:
+while repeat:
     user_circle = Circle(user_radius)
     print(f"Your circle has diameter {user_circle.calculate_diameter()}, "
           f"Circumference {user_circle.calculate_circumference()}, "
